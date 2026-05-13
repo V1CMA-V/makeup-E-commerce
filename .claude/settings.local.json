@@ -4,7 +4,8 @@
       "Bash(pnpm prisma *)",
       "Bash(pnpm tsc *)",
       "PowerShell(pnpm add *)",
-      "PowerShell(clerk *)"
+      "PowerShell(clerk *)",
+      "Skill(tailwind-css-patterns)"
     ]
   }
 }
