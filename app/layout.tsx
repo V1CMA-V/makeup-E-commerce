@@ -4,7 +4,7 @@ import Header from '@/sections/Header'
 import type { Metadata } from 'next'
 import './globals.css'
 // Supports weights 300-700
-import '@fontsource-variable/cormorant-garamond/wght.css'
+import '@fontsource-variable/cormorant-garamond/wght-italic.css'
 import '@fontsource-variable/jetbrains-mono/wght.css'
 import '@fontsource-variable/jost/wght.css'
 import '@fontsource/italiana'
