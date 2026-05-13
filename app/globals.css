@@ -81,7 +81,7 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
   --background: oklch(93.741% 0.01802 89.357);
-  --foreground: oklch(21.286% 0.01383 72.019);
+  --foreground: oklch(44.345% 0.02917 70.93);
 }
 
 .dark {
@@ -133,4 +133,3 @@
     @apply font-sans;
   }
 }
-
