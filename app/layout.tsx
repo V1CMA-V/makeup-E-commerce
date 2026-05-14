@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import Header from '@/sections/Header'
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import './globals.css'
 // Supports weights 300-700
 import Footer from '@/sections/Footer'
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={cn('h-full', 'antialiased')}>
       <body className="min-h-full flex flex-col">
-        <Header screen="home" setScreen={() => {}} brand="MAISON VESPER" />
+        <Suspense fallback={null}>
+          <Header brand="MAISON VESPER" />
+        </Suspense>
         {children}
         <Footer brand="MAISON VESPER" />
       </body>

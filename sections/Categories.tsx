@@ -16,11 +16,42 @@ const categories: Category[] = [
   { label: 'Sets & Kits', code: 'KT', tone: 'blush', cell: { gridColumn: '2 / span 3', gridRow: '2' } },
 ]
 
+const mobileFour = categories.slice(0, 4)
+
 export default function Categories() {
   return (
-    <section className="bg-[#1d1812] text-[#f6f1e5] px-10 py-[120px]">
-      <div className="grid grid-cols-3 gap-8 items-stretch">
-        {/* Col 1 — narrative */}
+    <section className="bg-[#1d1812] text-[#f6f1e5] px-[22px] py-10 md:px-10 md:py-[120px]">
+      {/* Mobile */}
+      <div className="md:hidden">
+        <div className="font-mono text-[9px] tracking-[0.28em] uppercase text-[#f6f1e5]/60 mb-3">
+          04 · Catálogo
+        </div>
+        <h2 className="font-title text-[36px] m-0 leading-none font-normal">
+          Siete gestos,
+          <br />
+          <em className="font-heading font-light">una silueta.</em>
+        </h2>
+        <div className="grid grid-cols-2 gap-[10px] mt-6">
+          {mobileFour.map(({ label, code, tone }) => (
+            <button key={label} type="button" className="relative text-left">
+              <VPlaceholder
+                style={{}}
+                tone={tone}
+                ratio="1/1"
+                code={code}
+                label={label.toUpperCase()}
+                big={false}
+              />
+              <div className="absolute left-3 bottom-[10px] font-title text-[20px] text-[#f6f1e5]">
+                {label}
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:grid grid-cols-3 gap-8 items-stretch">
         <div className="flex flex-col gap-6 justify-between pr-4">
           <div>
             <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-[#f6f1e5]/55 mb-[18px]">
@@ -42,7 +73,6 @@ export default function Categories() {
           </p>
         </div>
 
-        {/* Col 2 + 3 — category cards */}
         <div
           className="col-span-2 grid gap-[14px]"
           style={{

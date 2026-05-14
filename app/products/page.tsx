@@ -25,7 +25,7 @@ const catalog: Product[] = [
     finish: 'Mate satinado',
     cat: 'Labios',
     tone: 'plum',
-    price: '€ 48',
+    price: '$48',
   },
   {
     id: '2',
@@ -35,7 +35,7 @@ const catalog: Product[] = [
     finish: 'Crema',
     cat: 'Rostro',
     tone: 'sand',
-    price: '€ 92',
+    price: '$92',
   },
   {
     id: '3',
@@ -45,7 +45,7 @@ const catalog: Product[] = [
     finish: 'Polvo',
     cat: 'Ojos',
     tone: 'deep',
-    price: '€ 36',
+    price: '$36',
   },
   {
     id: '4',
@@ -55,7 +55,7 @@ const catalog: Product[] = [
     finish: 'Crema',
     cat: 'Cejas',
     tone: 'ink',
-    price: '€ 28',
+    price: '$28',
   },
   {
     id: '5',
@@ -65,7 +65,7 @@ const catalog: Product[] = [
     finish: 'Luminoso',
     cat: 'Skincare',
     tone: 'cream',
-    price: '€ 140',
+    price: '$140',
   },
   {
     id: '6',
@@ -75,7 +75,7 @@ const catalog: Product[] = [
     finish: 'Brillo',
     cat: 'Sets & Kits',
     tone: 'blush',
-    price: '€ 210',
+    price: '$210',
   },
 ]
 

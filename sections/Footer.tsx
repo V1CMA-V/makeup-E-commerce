@@ -59,21 +59,18 @@ function FooterColumn({ title, items }: Column) {
 
 export default function Footer({ brand }: FooterProps) {
   return (
-    <footer className="bg-[#ece4d2] px-10 pt-[72px] pb-8 border-t border-[#1d1812]/15">
-      <div
-        className="grid gap-12 mb-16"
-        style={{ gridTemplateColumns: '1.4fr 1fr 1fr 1fr 1fr' }}
-      >
-        <div>
-          <div className="font-title text-[32px] tracking-[0.28em] mb-[18px]">
+    <footer className="bg-[#ece4d2] px-[22px] pt-12 pb-8 md:px-10 md:pt-[72px] border-t border-[#1d1812]/15">
+      <div className="grid grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] gap-10 md:gap-12 mb-12 md:mb-16">
+        <div className="col-span-2 md:col-span-1">
+          <div className="font-title text-2xl md:text-[32px] tracking-[0.28em] mb-[18px]">
             {brand}
           </div>
-          <p className="font-heading text-base leading-[1.55] text-[#1d1812]/60 max-w-[320px] m-0">
-            Cosmética de autor compuesta en pequeñas series. Madrid, desde
+          <p className="font-heading text-[15px] md:text-base leading-[1.55] text-[#1d1812]/60 max-w-[320px] m-0">
+            Cosmética de autor compuesta en pequeñas series. México, desde
             MMXIX.
           </p>
           <div className="font-mono mt-[22px] text-[10px] tracking-[0.22em] uppercase text-[#1d1812]/40">
-            N° 14 · Calle de la Beneficencia · Madrid
+            N° 14 · Calle de la Beneficencia · México
           </div>
         </div>
 
@@ -81,7 +78,7 @@ export default function Footer({ brand }: FooterProps) {
           <FooterColumn key={c.title} title={c.title} items={c.items} />
         ))}
 
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <div className="font-mono text-[10px] tracking-[0.24em] uppercase text-[#1d1812]/60 mb-[18px]">
             Correspondencia
           </div>
@@ -105,15 +102,15 @@ export default function Footer({ brand }: FooterProps) {
 
       <hr className="border-0 border-t border-[#1d1812]/15" />
 
-      <div className="flex justify-between mt-6">
+      <div className="flex flex-col md:flex-row md:justify-between gap-3 mt-6">
         <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#1d1812]/40">
           © MMXXVI {brand} · Tous droits réservés
         </div>
-        <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#1d1812]/40 flex gap-6">
+        <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#1d1812]/40 flex flex-wrap gap-3 md:gap-6">
           <span>Aviso legal</span>
           <span>Privacidad</span>
           <span>Cookies</span>
-          <span>ES · €</span>
+          <span>MX · $</span>
         </div>
       </div>
     </footer>

@@ -18,7 +18,7 @@ const filters: Filter[] = [
   },
   {
     title: 'Precio',
-    options: ['Hasta 40 €', '40 – 80 €', '80 – 150 €', 'Más de 150 €'],
+    options: ['Hasta 40 $', '40 – 80 $', '80 – 150 $', 'Más de 150 $'],
   },
   { title: 'Edición', options: ['Permanente', 'Pequeña serie', 'Numerada'] },
 ]
@@ -29,11 +29,8 @@ type ProductsProps = {
 
 export default function Products({ items }: ProductsProps) {
   return (
-    <section
-      className="grid gap-10 p-10"
-      style={{ gridTemplateColumns: '220px 1fr' }}
-    >
-      <aside>
+    <section className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6 md:gap-10 p-[22px] md:p-10">
+      <aside className="hidden md:block">
         {filters.map(({ title, options }) => (
           <div key={title} className="mb-8">
             <div className="font-mono text-[10px] tracking-[0.24em] uppercase text-[#1d1812]/60 mb-[14px] pb-[10px] border-b border-[#1d1812]/15">
@@ -64,7 +61,7 @@ export default function Products({ items }: ProductsProps) {
         ))}
       </aside>
 
-      <div className="grid grid-cols-3 gap-6 auto-rows-min">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 auto-rows-min">
         {items.map((p, idx) => (
           <Link
             key={p.id}
@@ -84,17 +81,17 @@ export default function Products({ items }: ProductsProps) {
                 Nuevo
               </div>
             )}
-            <div className="mt-4 flex justify-between items-baseline">
-              <div>
-                <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1d1812]/60">
+            <div className="mt-2 md:mt-4 flex justify-between items-baseline gap-2">
+              <div className="min-w-0">
+                <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] uppercase text-[#1d1812]/60">
                   N° {p.ref}
                 </div>
-                <div className="font-heading text-xl mt-1">{p.name}</div>
-                <div className="font-heading text-sm italic text-[#1d1812]/60 mt-[2px]">
+                <div className="font-heading text-sm md:text-xl mt-1 truncate">{p.name}</div>
+                <div className="font-heading text-[12px] md:text-sm italic text-[#1d1812]/60 mt-[2px]">
                   {p.finish} · {p.cat}
                 </div>
               </div>
-              <div className="font-heading text-[18px] italic">{p.price}</div>
+              <div className="font-heading text-sm md:text-[18px] italic whitespace-nowrap">{p.price}</div>
             </div>
           </Link>
         ))}
