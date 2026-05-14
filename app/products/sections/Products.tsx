@@ -1,6 +1,6 @@
 import VPlaceholder from '@/components/VPlaceholder'
 import Link from 'next/link'
-import type { Product } from '../types'
+import type { Product } from '../types/types'
 
 type Filter = {
   title: string
