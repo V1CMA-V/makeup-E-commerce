@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 type Screen = 'home' | 'plp' | 'account' | (string & {})
 
 type HeaderProps = {
@@ -8,7 +10,7 @@ type HeaderProps = {
 }
 
 const primaryLinks: { label: string; to?: Screen }[] = [
-  { label: 'Tienda', to: 'plp' },
+  { label: 'Tienda', to: '/products' },
   { label: 'Maison' },
   { label: 'Diario' },
   { label: 'Boutiques' },
@@ -26,12 +28,7 @@ const railCategories = [
 
 const navButton = 'font-sans text-[12px] tracking-[0.2em] uppercase'
 
-export default function Header({
-  screen,
-  setScreen,
-  brand,
-  cartCount = 2,
-}: HeaderProps) {
+export default function Header({ screen, brand, cartCount = 2 }: HeaderProps) {
   return (
     <header className="bg-[#f6f1e5] relative">
       {/* Promo strip */}
@@ -46,9 +43,11 @@ export default function Header({
       >
         <div className="flex gap-7">
           {primaryLinks.map(({ label, to }) => (
-            <button key={label} type="button" className={navButton}>
-              {label}
-            </button>
+            <Link key={label} href={to ? to : '/'} className={navButton}>
+              <button type="button" className={navButton}>
+                {label}
+              </button>
+            </Link>
           ))}
         </div>
 
@@ -63,14 +62,9 @@ export default function Header({
           <button type="button" className={navButton}>
             Buscar
           </button>
-          <button
-            type="button"
-            className={`${navButton} ${
-              screen === 'account' ? 'text-[#7a2626]' : 'text-[#1d1812]'
-            }`}
-          >
+          <Link href="/account" className={navButton}>
             Cuenta
-          </button>
+          </Link>
           <button type="button" className={navButton}>
             Bolsa{' '}
             <span className="font-mono ml-1 text-[11px]">[{cartCount}]</span>
