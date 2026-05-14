@@ -1,9 +1,9 @@
 import { cn } from '@/lib/utils'
-import CtaTop from '@/sections/CtaTop'
 import Header from '@/sections/Header'
 import type { Metadata } from 'next'
 import './globals.css'
 // Supports weights 300-700
+import Footer from '@/sections/Footer'
 import '@fontsource-variable/cormorant-garamond/wght-italic.css'
 import '@fontsource-variable/jetbrains-mono/wght.css'
 import '@fontsource-variable/jost/wght.css'
@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={cn('h-full', 'antialiased')}>
       <body className="min-h-full flex flex-col">
-        <CtaTop />
-        <Header />
+        <Header screen="home" setScreen={() => {}} brand="MAISON VESPER" />
         {children}
+        <Footer brand="MAISON VESPER" />
       </body>
     </html>
   )

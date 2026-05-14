@@ -1,0 +1,181 @@
+import VPlaceholder from '@/components/VPlaceholder'
+
+// Catalog data
+const VESPER_CATALOG = [
+  {
+    id: 'rouge-07',
+    name: 'Rouge Vesper N°07',
+    cat: 'Labios',
+    ref: 'LV-07',
+    price: '48 €',
+    finish: 'Mate satinado',
+    tone: 'blush',
+    label: 'Rouge · Vermeil',
+  },
+  {
+    id: 'rouge-12',
+    name: 'Rouge Vesper N°12',
+    cat: 'Labios',
+    ref: 'LV-12',
+    price: '48 €',
+    finish: 'Crema',
+    tone: 'plum',
+    label: 'Rouge · Bourgogne',
+  },
+  {
+    id: 'gloss-01',
+    name: 'Brillo Vélin',
+    cat: 'Labios',
+    ref: 'LV-21',
+    price: '36 €',
+    finish: 'Brillo glaseado',
+    tone: 'cream',
+    label: 'Brillo · Miel',
+  },
+  {
+    id: 'base-04',
+    name: 'Voile de Teint',
+    cat: 'Rostro',
+    ref: 'FR-04',
+    price: '72 €',
+    finish: 'Luminoso',
+    tone: 'sand',
+    label: 'Base · Voile',
+  },
+  {
+    id: 'pol-02',
+    name: 'Poudre Atelier',
+    cat: 'Rostro',
+    ref: 'FR-08',
+    price: '54 €',
+    finish: 'Polvo suelto',
+    tone: 'cream',
+    label: 'Polvo · Atelier',
+  },
+  {
+    id: 'blush-03',
+    name: 'Crème de Blush',
+    cat: 'Rostro',
+    ref: 'FR-12',
+    price: '42 €',
+    finish: 'Crema',
+    tone: 'blush',
+    label: 'Blush · Rose',
+  },
+  {
+    id: 'mask-01',
+    name: 'Mascara Plume',
+    cat: 'Ojos',
+    ref: 'OJ-01',
+    price: '38 €',
+    finish: 'Volumen',
+    tone: 'ink',
+    label: 'Mascara · Noir',
+  },
+  {
+    id: 'shadow-04',
+    name: 'Quatuor d\u2019Ombres',
+    cat: 'Ojos',
+    ref: 'OJ-09',
+    price: '76 €',
+    finish: 'Paleta',
+    tone: 'deep',
+    label: 'Quatuor · Terre',
+  },
+  {
+    id: 'liner-02',
+    name: 'Trait de Plume',
+    cat: 'Ojos',
+    ref: 'OJ-14',
+    price: '34 €',
+    finish: 'Líquido',
+    tone: 'ink',
+    label: 'Eyeliner · Encre',
+  },
+  {
+    id: 'brow-01',
+    name: 'Sourcil Architecte',
+    cat: 'Cejas',
+    ref: 'CE-01',
+    price: '32 €',
+    finish: 'Gel fijador',
+    tone: 'sand',
+    label: 'Cejas · Gel',
+  },
+  {
+    id: 'skin-01',
+    name: 'Sérum Préparateur',
+    cat: 'Skincare',
+    ref: 'SP-03',
+    price: '94 €',
+    finish: 'Sérum',
+    tone: 'cream',
+    label: 'Sérum · Préparateur',
+  },
+  {
+    id: 'brush-set',
+    name: 'Étui de Brochas N°1',
+    cat: 'Brochas',
+    ref: 'BR-01',
+    price: '210 €',
+    finish: '12 piezas',
+    tone: 'deep',
+    label: 'Étui · Brochas',
+  },
+  {
+    id: 'kit-01',
+    name: 'Coffret Initiation',
+    cat: 'Sets',
+    ref: 'KT-01',
+    price: '180 €',
+    finish: '5 piezas',
+    tone: 'plum',
+    label: 'Coffret · Init.',
+  },
+]
+
+export default function Essential() {
+  const featured = VESPER_CATALOG.slice(0, 4)
+  return (
+    <section className="p" style={{ padding: '96px 40px' }}>
+      <div className="flex items-baseline justify-between mb-12">
+        <div>
+          <div className="font-mono text-xs tracking-widest text-[#5e5142] font-bold uppercase mb-4">
+            03 · Lo esencial
+          </div>
+          <h2 className="text-[56px] tracking-tight font-heading font-normal">
+            Las piezas{' '}
+            <em className="font-heading font-light">imprescindibles</em>
+          </h2>
+        </div>
+        <button className="font-mono text-xs tracking-widest text-[#5e5142] font-bold uppercase pb-1 border-b border-[#1d1812]">
+          Ver toda la colección →
+        </button>
+      </div>
+
+      <div className="grid grid-cols-4 gap-7">
+        {featured.map((p) => (
+          <button key={p.id} className="text-left">
+            <VPlaceholder
+              style={{}}
+              big={false}
+              tone={p.tone}
+              ratio="4/5"
+              label={p.label}
+              code={p.ref}
+            />
+            <div className="flex justify-between items-baseline mt-4">
+              <div>
+                <div className="font-heading text-lg">{p.name}</div>
+                <div className="font-mono text-xs tracking-widest text-[#5e5142] font-bold uppercase mt-2">
+                  {p.finish}
+                </div>
+              </div>
+              <div className="font-heading text-lg font-italic">{p.price}</div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
