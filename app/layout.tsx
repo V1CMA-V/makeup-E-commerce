@@ -24,10 +24,10 @@ export default function RootLayout({
     <html lang="es" className={cn('h-full', 'antialiased')}>
       <body className="min-h-full flex flex-col">
         <Suspense fallback={null}>
-          <Header brand="MAISON VESPER" />
+          <Header brand="YEY BEAUTY" />
         </Suspense>
         {children}
-        <Footer brand="MAISON VESPER" />
+        <Footer brand="YEY BEAUTY" />
       </body>
     </html>
   )
